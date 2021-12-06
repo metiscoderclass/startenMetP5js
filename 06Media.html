@@ -76,7 +76,7 @@ https://editor.p5js.org/visualeditorNL/sketches/_OMoDUoOC
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
 function preload() {
-  kitty = loadImage("images/kitty.jpg");
+  kitty = loadImage("media/kitty.jpg");
 }
 function setup() {
   createCanvas(400, 400);
@@ -127,7 +127,7 @@ Hier is een sketch die beide varianten laat zien.
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
 function preload() {
-  kitty = loadImage("images/kitty.jpg");
+  kitty = loadImage("media/kitty.jpg");
 }
 function setup() {
   createCanvas(400, 400);
@@ -166,7 +166,7 @@ function setup() {
   createCanvas(400, 400);
 }
 function draw() {
-  kitty = loadImage("images/kitty.jpg");
+  kitty = loadImage("media/kitty.jpg");
   background(255);
   image(kitty, mouseX, mouseY);
 }
@@ -197,8 +197,8 @@ Het volgende voorbeeld laat een cat in een hond veranderen als de muis wordt ing
 var kitty;
 var doggy;
 function preload() {
-  kitty = loadImage("images/kitty.jpg");
-  doggy = loadImage("images/doggy.jpg");
+  kitty = loadImage("media/kitty.jpg");
+  doggy = loadImage("media/doggy.jpg");
 }
 function setup() {
   createCanvas(400, 400);
@@ -228,7 +228,7 @@ Je kunt dit eenvoudig zichtbaar maken door een plaatje tweemaal te tekenen:</p>
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
 function preload() {
-  kitty = loadImage("images/kitty.jpg");
+  kitty = loadImage("media/kitty.jpg");
 }
 function setup() {
   createCanvas(400, 400);
@@ -286,7 +286,7 @@ vulkleur is</em>. (De uitdrukking met <code>sin()</code> gebruikt de frame count
 <script type="text/p5" data-preview-width="400" data-height="400">
 var img;
 function preload() {
-    img = loadImage("images/Filet-O-Fish_transparent.png");
+    img = loadImage("media/Filet-O-Fish_transparent.png");
 }
 function setup() {
     createCanvas(400, 400);
@@ -314,7 +314,7 @@ solid color background!)</p>
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
 function preload() {
-  kitty = loadImage("images/kitty_transparent.png");
+  kitty = loadImage("media/kitty_transparent.png");
 }
 function setup() {
   createCanvas(400, 400);
@@ -353,14 +353,14 @@ the image’s width and height:</p>
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
 function preload() {
-  kitty = loadImage("images/kitty_transparent.png");
+  kitty = loadImage("media/kitty_transparent.png");
 }
 function setup() {
   createCanvas(400, 400);
 }
 function draw() {
   background(50, 50, 240);
-  for (var i = 0; i &lt; 10; i++) {
+  for (var i = 0; i < 10; i++) {
     image(kitty, (i*25), (i*25),
       kitty.width*(i+1)/10,
       kitty.height*(i+1)/10);
@@ -397,7 +397,7 @@ Horizons probe.)</p>
 <script type="text/p5" data-preview-width="400" data-height="400">
 var charon;
 function preload() {
-  charon = loadImage("images/charon.jpg");
+  charon = loadImage("media/charon.jpg");
 }
 function setup() {
   createCanvas(400, 400);
@@ -422,7 +422,7 @@ var charon;
 var gridx = 25;
 var gridy = 25;
 function preload() {
-  charon = loadImage("images/charon.jpg");
+  charon = loadImage("media/charon.jpg");
 }
 function setup() {
   createCanvas(400, 400);
@@ -491,15 +491,15 @@ folder, and then load the sound file data inside the sketch.</p>
 <code>loadSound()</code> function in <code>preload()</code> to load the data and assign the variable
 to the object. Once you’ve done so, you can call the object’s <code>.play()</code> method
 inside of <code>draw()</code> in order to trigger the sound. Here’s an example, using
-<a href="/images/meow.mp3">this audio file</a>
+<a href="/media/meow.mp3">this audio file</a>
 (<a href="https://freesound.org/people/Yoyodaman234/sounds/156643/">source</a>).</p>
 
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
 var meow;
 function preload() {
-  kitty = loadImage("images/kitty.jpg");
-  meow = loadSound("images/meow.mp3");
+  kitty = loadImage("media/kitty.jpg");
+  meow = loadSound("media/meow.mp3");
 }
 function setup() {
   createCanvas(400, 400);
@@ -524,8 +524,8 @@ pressed? You might think you could do it like this:</p>
 var kitty;
 var meow;
 function preload() {
-  kitty = loadImage("images/kitty.jpg");
-  meow = loadSound("images/meow.mp3");
+  kitty = loadImage("media/kitty.jpg");
+  meow = loadSound("media/meow.mp3");
 }
 function setup() {
   createCanvas(400, 400);
@@ -559,8 +559,8 @@ method, which returns true if the sound is playing, and false if not:</p>
 var kitty;
 var meow;
 function preload() {
-  kitty = loadImage("images/kitty.jpg");
-  meow = loadSound("images/meow.mp3");
+  kitty = loadImage("media/kitty.jpg");
+  meow = loadSound("media/meow.mp3");
 }
 function setup() {
   createCanvas(400, 400);
@@ -599,8 +599,8 @@ purposes is that it only gets called <em>once</em> per mouse press!</p>
 var kitty;
 var meow;
 function preload() {
-  kitty = loadImage("images/kitty.jpg");
-  meow = loadSound("images/meow.mp3");
+  kitty = loadImage("media/kitty.jpg");
+  meow = loadSound("media/meow.mp3");
 }
 function setup() {
   createCanvas(400, 400);
@@ -624,8 +624,8 @@ effect.)</p>
 var kitty;
 var meow;
 function preload() {
-  kitty = loadImage("images/kitty.jpg");
-  meow = loadSound("images/meow.mp3");
+  kitty = loadImage("media/kitty.jpg");
+  meow = loadSound("media/meow.mp3");
 }
 function setup() {
   createCanvas(400, 400);
@@ -662,11 +662,11 @@ var snare;
 var hihat;
 var extraScale = 0;
 function preload() {
-  kitty = loadImage("images/kitty.jpg");
-  meow = loadSound("images/meow.mp3");
-  kick = loadSound("images/kick.mp3");
-  snare = loadSound("images/snare.mp3");
-  hihat = loadSound("images/hihat.mp3");
+  kitty = loadImage("media/kitty.jpg");
+  meow = loadSound("media/meow.mp3");
+  kick = loadSound("media/kick.mp3");
+  snare = loadSound("media/snare.mp3");
+  hihat = loadSound("media/hihat.mp3");
 }
 function setup() {
   createCanvas(400, 400);
