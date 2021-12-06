@@ -314,7 +314,7 @@ solid color background!)</p>
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
 function preload() {
-  kitty = loadImage("kitty_transparent.png");
+  kitty = loadImage("images/kitty_transparent.png");
 }
 function setup() {
   createCanvas(400, 400);
@@ -353,7 +353,7 @@ the image’s width and height:</p>
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
 function preload() {
-  kitty = loadImage("kitty_transparent.png");
+  kitty = loadImage("images/kitty_transparent.png");
 }
 function setup() {
   createCanvas(400, 400);
@@ -397,7 +397,7 @@ Horizons probe.)</p>
 <script type="text/p5" data-preview-width="400" data-height="400">
 var charon;
 function preload() {
-  charon = loadImage("charon.jpg");
+  charon = loadImage("images/charon.jpg");
 }
 function setup() {
   createCanvas(400, 400);
@@ -422,7 +422,7 @@ var charon;
 var gridx = 25;
 var gridy = 25;
 function preload() {
-  charon = loadImage("charon.jpg");
+  charon = loadImage("images/charon.jpg");
 }
 function setup() {
   createCanvas(400, 400);
@@ -491,15 +491,15 @@ folder, and then load the sound file data inside the sketch.</p>
 <code>loadSound()</code> function in <code>preload()</code> to load the data and assign the variable
 to the object. Once you’ve done so, you can call the object’s <code>.play()</code> method
 inside of <code>draw()</code> in order to trigger the sound. Here’s an example, using
-<a href="/sketches/meow.mp3">this audio file</a>
+<a href="/images/meow.mp3">this audio file</a>
 (<a href="https://freesound.org/people/Yoyodaman234/sounds/156643/">source</a>).</p>
 
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
 var meow;
 function preload() {
-  kitty = loadImage("kitty.jpg");
-  meow = loadSound("meow.mp3");
+  kitty = loadImage("images/kitty.jpg");
+  meow = loadSound("images/meow.mp3");
 }
 function setup() {
   createCanvas(400, 400);
@@ -524,8 +524,8 @@ pressed? You might think you could do it like this:</p>
 var kitty;
 var meow;
 function preload() {
-  kitty = loadImage("kitty.jpg");
-  meow = loadSound("meow.mp3");
+  kitty = loadImage("images/kitty.jpg");
+  meow = loadSound("images/meow.mp3");
 }
 function setup() {
   createCanvas(400, 400);
@@ -559,8 +559,8 @@ method, which returns true if the sound is playing, and false if not:</p>
 var kitty;
 var meow;
 function preload() {
-  kitty = loadImage("kitty.jpg");
-  meow = loadSound("meow.mp3");
+  kitty = loadImage("images/kitty.jpg");
+  meow = loadSound("images/meow.mp3");
 }
 function setup() {
   createCanvas(400, 400);
@@ -599,8 +599,8 @@ purposes is that it only gets called <em>once</em> per mouse press!</p>
 var kitty;
 var meow;
 function preload() {
-  kitty = loadImage("kitty.jpg");
-  meow = loadSound("meow.mp3");
+  kitty = loadImage("images/kitty.jpg");
+  meow = loadSound("images/meow.mp3");
 }
 function setup() {
   createCanvas(400, 400);
@@ -624,8 +624,8 @@ effect.)</p>
 var kitty;
 var meow;
 function preload() {
-  kitty = loadImage("kitty.jpg");
-  meow = loadSound("meow.mp3");
+  kitty = loadImage("images/kitty.jpg");
+  meow = loadSound("images/meow.mp3");
 }
 function setup() {
   createCanvas(400, 400);
@@ -662,11 +662,11 @@ var snare;
 var hihat;
 var extraScale = 0;
 function preload() {
-  kitty = loadImage("kitty.jpg");
-  meow = loadSound("meow.mp3");
-  kick = loadSound("kick.mp3");
-  snare = loadSound("snare.mp3");
-  hihat = loadSound("hihat.mp3");
+  kitty = loadImage("images/kitty.jpg");
+  meow = loadSound("images/meow.mp3");
+  kick = loadSound("images/kick.mp3");
+  snare = loadSound("images/snare.mp3");
+  hihat = loadSound("images/hihat.mp3");
 }
 function setup() {
   createCanvas(400, 400);
