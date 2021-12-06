@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    
-      Interactie 
-    
+
+      Interactie
+
   </title>
 
   <!-- CSS -->
@@ -48,13 +48,14 @@
   <li><a href="https://editor.p5js.org/" target="_blank">p5 webeditor</a></li>
   <li><a href="https://p5js.org/reference/" target="_blank">Referentie</a></li>
 <li><a href="https://www.youtube.com/user/shiffman/playlists?sort=dd&shelf_id=14&view=50" target="_blank">The Coding Train</a></li>
+  <li><a href="http://www.generative-gestaltung.de/2/" target="_blank">Generative Design voorbeeldsketches</a></li>
 </ul>
     <div class="container content">
       <main>
         <article class="page">
   <h1 class="page-title">Interactie</h1>
 <small> <p>Deze site is grotendeels een vertaling van een tutorial van <a href="https://creative-coding.decontextualize.com/">Allison Parrish</a>
-  
+
 <p>In dit hoofdstuk ga je leren hoe je in p5.js sketches kan maken die reageren op input van de gebruiker.</p>
 
 <h2 id="built-in-processing-variables">Ingebouwde p5.js variabelen</h2>
@@ -127,7 +128,7 @@ function draw() {
 }
 </script>
 
-<p>Natuurlijk kan je de <code>mouseX</code> en <code>mouseY</code> niet alleen gebruiken voor de <em>positie</em> van de vormen die je tekent, maar ook voor andere elementen. Hier is een sketch die de  
+<p>Natuurlijk kan je de <code>mouseX</code> en <code>mouseY</code> niet alleen gebruiken voor de <em>positie</em> van de vormen die je tekent, maar ook voor andere elementen. Hier is een sketch die de
 <code>mouseX</code> waarde gebruikt om de breedte van de lijn en de <code>mouseY</code> waarde om de grootte van de ellips te bepalen:</p>
 
 <script type="text/p5" data-preview-width="400" data-height="400">
@@ -151,8 +152,8 @@ function setup() {
   createCanvas(400, 400);
   background(50);
 }
-function draw() { 
-  noStroke(); 
+function draw() {
+  noStroke();
   ellipse(mouseX, mouseY, 10, 10);
 }
 </script>
@@ -211,7 +212,7 @@ function draw() {
 }
 </code></pre>
 
-<p>… waarbij <code>expr</code> een <em>relationale expressie</em> (uitleg volgt hieronder) is en 
+<p>… waarbij <code>expr</code> een <em>relationale expressie</em> (uitleg volgt hieronder) is en
 <code>code-die-uitgevoerd-moet-worden</code> een of meer Javascript statements zijn (zoals functie aanroepen, <code>for</code>
 loops, of zelfs andere <code>if</code> statements). Als de relationale expressie <code>waar</code> is, dan wordt de <code>code-die-uitgevoerd-moet-worden</code> uitgevoerd. Anders worden de statements <em>niet</em> uitgevoerd en wordt de betreffende code overgeslagen.</p>
 

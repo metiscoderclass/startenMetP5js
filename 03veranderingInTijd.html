@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    
+
       Veranderingen in tijd
-    
+
   </title>
 
 <!-- CSS -->
@@ -48,12 +48,13 @@
   <li><a href="https://editor.p5js.org/" target="_blank">p5 webeditor</a></li>
   <li><a href="https://p5js.org/reference/" target="_blank">Referentie</a></li>
 <li><a href="https://www.youtube.com/user/shiffman/playlists?sort=dd&shelf_id=14&view=50" target="_blank">The Coding Train</a></li>
+  <li><a href="http://www.generative-gestaltung.de/2/" target="_blank">Generative Design voorbeeldsketches</a></li>
 </ul>
     <div class="container content">
       <main>
         <article class="page">
   <h1 class="page-title">Veranderingen in tijd</h1>
-<small> <p>Deze site is grotendeels een vertaling van een tutorial van <a href="https://creative-coding.decontextualize.com/">Allison Parrish</a> 
+<small> <p>Deze site is grotendeels een vertaling van een tutorial van <a href="https://creative-coding.decontextualize.com/">Allison Parrish</a>
 
 <p>In dit hoofdstuk zal je leren hoe je een simpele p5.js sketch moet maken die animeren. Dus waar beweging in tijd in zit. Voor we daar aan beginnen zal ik eerst even uitleggen hoe tijd werkt in de programmeertaal Processing en p5.js. Want dit is anders dan in veel andere programmeertalen.</p>
 
@@ -62,7 +63,7 @@
 <p>Alle sketches die we tot nu toe hebben gemaakt bestonden uit twee delen, zoals ze misschien al is opgevallen: er ging code in de <code>function setup() { ... }</code> en er ging code in de <code>function
 draw() { ... }</code>. Ik heb nog niet precies uitgelegd wat deze twee delen precies doen, omdat het misschien een beetje veel was om het allemaal vanaf het begin allemaal in een keer te begrijpen. Ik hoop dat je er nu wel aan toe bent. </p>
 
-<p>Maar om een lang verhaal kort te maken, wat er gebeurt is: alle 
+<p>Maar om een lang verhaal kort te maken, wat er gebeurt is: alle
 code die je in <code>setup()</code> staat wordt maar een keer uitgevoerd, aan het begin van het programma. Alle code die je in <code>draw()</code> stopt wordt <em>steeds opnieuw</em> uitgevoerd, normaal gesproken heel veel keer per seconde.</p>
 
 <p>“Maar wacht?” zal je denken. “Wat bedoel je? Het ziet er helemaal niet uit dat mijn sketch steeds opnieuw wordt getekend. Het lijkt gewoon een stilstaande tekening met cirkels of rechthoeken." En dat klopt! Alle sketches die je tot nu toe hebt gemaakt en die ik tot nu toe heb laten zien tekenen achter elkaar <em>precies hetzelfde op dezelfde plek</em>. Dus ze lijken helemaal niet opnieuw getekend te worden. </p>
@@ -74,7 +75,7 @@ code die je in <code>setup()</code> staat wordt maar een keer uitgevoerd, aan he
 }
 
 function draw() {
-    console.log("markeer"); 
+    console.log("markeer");
 }
 </code></pre>
 
@@ -94,11 +95,11 @@ function draw() {
 }
 
 function draw() {
-    console.log("markeer"); 
+    console.log("markeer");
 }
 </code></pre>
 
-<p>De aanroep voor <code>frameRate()</code> moet in het <code>setup()</code> gedeelte van je code, niet in de <code>draw()</code>, omdat je de frame rate maar een keer hoeft vast te stellen. Het getal dat je tussen de haakjes zet bepaald hoe <em>vaak per seconde</em> de code in 
+<p>De aanroep voor <code>frameRate()</code> moet in het <code>setup()</code> gedeelte van je code, niet in de <code>draw()</code>, omdat je de frame rate maar een keer hoeft vast te stellen. Het getal dat je tussen de haakjes zet bepaald hoe <em>vaak per seconde</em> de code in
 <code>draw()</code> uitgevoerd wordt. Je zal zien dat de code hierboven nog steeds het woord <code>markeer</code> print in het consolevenster, maar nu veel langzamer. </p>
 
 <p>De<code>frameCount</code> variabele is ingebouwd in p5.js. Je hoeft hem niet zelf te definieren, dat doet p5.js voordat de schets begint. De <code>frameCount</code> variabele is bijzonder omdat deze variabele iedere frame <em>verandert</em>: als de <code>draw()</code> voor het eerst wordt uitgevoerd is de <code>frameCount</code> gelijk aan nul; de tweede keer is dat de code in <code>draw()</code> wordt uitgevoerd is de <code>frameCount</code> gelijk aan één, enzovoort. De onderstaande schets is precies als die hierboven, maar nu print het niet het woord "markeer", maar print het de huidige waarde van de <code>frameCount</code> variabele:</p>
@@ -109,7 +110,7 @@ function draw() {
 }
 
 function draw() {
-    console.log(frameCount); 
+    console.log(frameCount);
 }
 </code></pre>
 
@@ -125,7 +126,7 @@ Als je benieuwd bent naar het aantal frames per seconde dat de computer standaar
 }
 
 function draw() {
-    console.log(frameRate()); 
+    console.log(frameRate());
 }
 </code></pre>
 
@@ -173,7 +174,7 @@ function draw() {
 
 <p>Het is belangrijk om te weten dat p5.js <em>niet automatisch</em> het scherm na iedere frame weer leeg maakt. Normaal blijft wat er na het vorige frame op het canvas staat gewoon staan in het volgende frame. </p>
 
-<p>Dus het verschil tussen de twee sketches zit in het moment waarop we de 
+<p>Dus het verschil tussen de twee sketches zit in het moment waarop we de
 <code>background()</code> functie aanroepen. In het voorbeeld hierboven is dat ergens in de <code>setup()</code> code, wat betekent dat de achtergrond maar <em>eenmaal</em> wordt getekend. In de <code>draw()</code> code, wordt de <code>background()</code> code niet meer gebruikt, dus krijgt de achtergrond niet iedere frame een "reset" tot een egale kleur</p>
 
 <p>Als je dus de achtergrond niet ieder frame opnieuw laat tekenen is het effect dat het lijkt alsof de sketch iedere keer over zichzelf wordt getekend, steeds opnieuw. En als je de <code>background()</code> in de <code>draw()</code> zet wordt deze ieder frame opnieuw getekend en geeft dit een veel beter animatie effect. Je kan met beide situaties hele mooie effecten bereiken! </p>
@@ -183,7 +184,7 @@ function draw() {
 
 <h2 id="simple-oscillation">Herhalende bewegingen</h2>
 
-<p>Het is echt wel cool om zo snel animaties te kunnen maken, maar het probleem met 
+<p>Het is echt wel cool om zo snel animaties te kunnen maken, maar het probleem met
 <code>frameCount</code> is dat het lineair toeneemt, van laag naar hoog, en dat is geen herhalende beweging, je kan alleen iets maken dat steeds groter wordt en/of in een richting beweegt. Nu zullen we gebruik gaan maken van een wiskundige berekening die in de wiskunde niet veel wordt gebruikt. Deze kan voor een herhalende beweging zorgen, een <em>oscillatie</em>, zodat is heen en weer gaat tussen twee momenten, met alleen het gebruik maken van de lineaire <code>frameCount</code> waarde als basis van de verandering. Hoe zit dat?</p>
 
 <h3 id="modulo">Modulo</h3>
@@ -200,12 +201,12 @@ function draw() {
 <p>Wat kunnen we nu met de modulo? We kunnen hiermee een hele makkelijke herhalende teller maken. Omdat de modulo zorgt voor het volgende patroon in uitkomsten: </p>
 
 <pre><code>0 % 5 =&gt; 0 (nul gedeeld door vijf is nul, met een restgetal van nul)
-1 % 5 =&gt; 1 (een gedeeld door vijf is nul, met een restgetal van een) 
+1 % 5 =&gt; 1 (een gedeeld door vijf is nul, met een restgetal van een)
 2 % 5 =&gt; 2
 3 % 5 =&gt; 3
 4 % 5 =&gt; 4
-5 % 5 =&gt; 0 (vijf gedeeld door vijf is een, met een restgetal van nul) 
-6 % 5 =&gt; 1 (zes gedeeld door vijf is een, met een restgetal van een) 
+5 % 5 =&gt; 0 (vijf gedeeld door vijf is een, met een restgetal van nul)
+6 % 5 =&gt; 1 (zes gedeeld door vijf is een, met een restgetal van een)
 7 % 5 =&gt; 2 (enzovoort)
 ...
 </code></pre>
@@ -252,7 +253,7 @@ function draw() {
 
 <p>Hier behoeven we niet in detail te gaan over wat de sinus precies is of hoe het werkt. Dat krijg je wel bij wiskunde. Het belangrijkste is dat we de sinus-functie kunnen gebruiken om mooie vloeiende regelmatige bewegingen te krijgen. In p5.js is de sinus-functie te gebruiken met de <code>sin()</code> functie. Anders dan de meeste functies die we tot nu toe hebben gebruikt, wordt de <code>sin()</code> niet gebruikt om iets op het scherm te krijgen. We gebruiken het om van een waarde (de frameCount) een andere waarde te krijgen na een wiskundige berekening, die we vervolgens kunnen gebruiken. </p>
 
-<p>De<code>sin()</code> functie heeft maar een parameter en berekent deze tot een waarde tussen 
+<p>De<code>sin()</code> functie heeft maar een parameter en berekent deze tot een waarde tussen
 -1 en 1. De <code>sin()</code> functie evalueert (berekent) verschillende waarden zo: </p>
 
 <pre><code>sin(0) = 0
@@ -433,7 +434,7 @@ function draw() {
 }
 </script>
 
-<p>Zoals je kan zien wordt, bij ieder frame, 1 opgeteld bij <code>foo</code> en 1 afgetrokken bij 
+<p>Zoals je kan zien wordt, bij ieder frame, 1 opgeteld bij <code>foo</code> en 1 afgetrokken bij
 <code>bar</code>.</p>
 
 <p>De expressie van de variabele neemt de huidige waarde van de variabele en stopt dan de oude waarde plus of min 1 weer terug in de variabele. Dit gebeurt bij het programmeren zo vaak dat er een shortcut voor is. Deze expressie:  </p>

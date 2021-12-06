@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    
+
       Transformaties en functies
-    
+
   </title>
 
   <!-- CSS -->
@@ -48,13 +48,14 @@
   <li><a href="https://editor.p5js.org/" target="_blank">p5 webeditor</a></li>
   <li><a href="https://p5js.org/reference/" target="_blank">Referentie</a></li>
   <li><a href="https://www.youtube.com/user/shiffman/playlists?sort=dd&shelf_id=14&view=50" target="_blank">The Coding Train</a></li>
+    <li><a href="http://www.generative-gestaltung.de/2/" target="_blank">Generative Design voorbeeldsketches</a></li>
 </ul>
     <div class="container content">
       <main>
         <article class="page">
   <h1 class="page-title">Transformaties en functies</h1>
 <small> <p>Deze site is grotendeels een vertaling van een tutorial van <a href="https://creative-coding.decontextualize.com/">Allison Parrish</a>
-  
+
 <p>In dit hoofdstuk ga je leren hoe je <em>transformaties</em> kan gebruiken. Dit is een handige en elegante manier om te bepalen waar en hoe vormen worden getekend op het scherm. Ook zal je de basis gaan leren van het maken van <em>functies</em>. Deze gebruik je om je code leesbaarder, vaak korter te maken en om de code mooi in te delen.</p>
 
 <h2 id="translation">Translate</h2>
@@ -225,7 +226,7 @@ wat je maar wilt.</p>
 Je kan functie overal in je broncode definieren. Maar leer wel een stijl aan met een logische volgorde. Zodat je code niet van de hak op de tak springt. Dat is heel lastig lezen voor iemand anders. Ik zou functies in p5.js zo veel mogelijk onderaan je code zetten, na <code>setup()</code> en
 <code>draw()</code>. Om vervolgens een functie te gebruiken moet je de functie "aanroepen" ("run" of "call" in het Engels), dus Javascript vertellen dat het de code in de functie moet gaan uitvoeren. Dat doe je door de naam van de functie te schrijven meteen gevolgt door haakjes (<code>()</code>)</p>
 
-<p>Hier is een versie van een functie van het bovenstaande voorbeeld waar nu de functie 
+<p>Hier is een versie van een functie van het bovenstaande voorbeeld waar nu de functie
 <code>maakSmiley()</code> wordt gedefinieerd met de code om een smiley te tekenen en daarboven in de <code>draw()</code> wordt de functie aangeroepen:</p>
 
 <script type="text/p5" data-preview-width="400" data-height="400">
@@ -489,7 +490,7 @@ function maakSmiley() {
 </script>
 <h3 id="rotation-and-translation">Rotatie en translate</h3>
 
-<p>Het is een beetje een anticlimax om de smiley alleen helemaal in de bovenhoek van het scherm te tekenen. Laten we de smiley tekenen in het midden van het scherm te tekenen met behulp van de 
+<p>Het is een beetje een anticlimax om de smiley alleen helemaal in de bovenhoek van het scherm te tekenen. Laten we de smiley tekenen in het midden van het scherm te tekenen met behulp van de
 <code>translate()</code> functie. Hier is de eerste poging:  </p>
 
 <script type="text/p5" data-preview-width="400" data-height="400">
@@ -546,7 +547,7 @@ function maakSmiley() {
 </script>
 <p>Deze twee voorbeelden laten zien dat, omdat transformaties bij elkaar optellen, is de <em>volgorde van de transformaties</em> van belang. Iedere transformatie heeft op een of andere manier effect op het coördinatensysteem en de daarop volgende transformaties veranderen de al gewijzigde coördinaten nog een keer. </p>
 
-<p>Al deze veranderingen zijn moeilijk te laten zien en vervolgens uit te leggen. Je moet het vooral uitproberen om ze te leren kennen en te leren te begrijpen. Een vuistregel die meestal werkt voor vrij simpele gevallen: <em>translate</em> eerst (dus verplaats het nulpunt naar de gewenste plek), 
+<p>Al deze veranderingen zijn moeilijk te laten zien en vervolgens uit te leggen. Je moet het vooral uitproberen om ze te leren kennen en te leren te begrijpen. Een vuistregel die meestal werkt voor vrij simpele gevallen: <em>translate</em> eerst (dus verplaats het nulpunt naar de gewenste plek),
 <em>roteer</em> vervolgens (om de orientatie van de vorm te veranderen en pas als laatste pas de <em>schaal</em> toe (om de vorm te vergroten of te verkleinen).</p>
 
 <h3 id="designing-around-the-origin">Ontwerpen rond het nulpunt</h3>

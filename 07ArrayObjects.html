@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    
+
       Arrays en objects (Creative Coding)
-    
+
   </title>
 
  <!-- CSS -->
@@ -48,12 +48,13 @@
   <li><a href="https://editor.p5js.org/" target="_blank">p5 webeditor</a></li>
   <li><a href="https://p5js.org/reference/" target="_blank">Referentie</a></li>
 <li><a href="https://www.youtube.com/user/shiffman/playlists?sort=dd&shelf_id=14&view=50" target="_blank">The Coding Train</a></li>
+  <li><a href="http://www.generative-gestaltung.de/2/" target="_blank">Generative Design voorbeeldsketches</a></li>
 </ul>
     <div class="container content">
       <main>
         <article class="pleeftijd">
   <h1 class="pleeftijd-title">Arrays en objecten</h1>
-<small> <p>Deze site is grotendeels een vertaling van een tutorial van <a href="https://creative-coding.decontextualize.com/">Allison Parrish</a> 
+<small> <p>Deze site is grotendeels een vertaling van een tutorial van <a href="https://creative-coding.decontextualize.com/">Allison Parrish</a>
 
 <p>In dit hoofdstuk komen nog twee heel belangrijke onderwerpen bij het programmeren ter sprake. Je zal leren hoe je <em>informatie van het gedrag van de gebruiker</em> kan opslaan in je sketch. Om dit te kunnen doen moet je twee nieuwe programmeerconcepten leren die in iedere programmeertaal gebruikt worden: arrays en objecten. </p>
 
@@ -164,7 +165,7 @@ function draw() {
   }
 }
 </script>
-<p>Dit is heel veel nieuwe informatie! Laten we de code stap voor stap doornemen. Als eerste is er de 
+<p>Dit is heel veel nieuwe informatie! Laten we de code stap voor stap doornemen. Als eerste is er de
 <em>declaratie</em> (het aanmaken) van de array:</p>
 
 <pre><code>var rectY = [0, 15, 30];
@@ -350,7 +351,7 @@ function mousePressed() {
   rectXY.push([mouseX, mouseY]);
 }
 </script>
-<p>Het mooie van deze constructie is dat we nu makkelijk een <em>derde</em> attribuut kunnen toevoegen bij iedere rechthoek door een derde element toe te voegen aan de array die we al toevoegen aan de 
+<p>Het mooie van deze constructie is dat we nu makkelijk een <em>derde</em> attribuut kunnen toevoegen bij iedere rechthoek door een derde element toe te voegen aan de array die we al toevoegen aan de
 <code>rectXY</code> array bij iedere muisklik. In het volgende voorbeeld wordt een random waarde toegevoegd op index 2 (derde positie) bij iedere muisklik. Deze waarde wordt gebruikt om iedere rechthoek een willekeurige kleur te geven in de <code>draw()</code> functie:</p>
 
 <script type="text/p5" data-preview-width="400" data-height="400">
@@ -521,7 +522,7 @@ formaat</a>.</p>
 
 <p>We gaan werken met een <a href="https://raw.githubusercontent.com/visualeditorNL/data/master/ajax.csv">CSV met de data van alle Ajax competitie wedstrijden van het seizoen 2017-2018</a>.</p>
 
-<p>“CSV” staat voor “comma separated values” (komma gescheiden waarden). Het is een platte tekst bestand (dus geen opmaak, zoals word of google documenten) dat een data in een vaste structuur bevat. 
+<p>“CSV” staat voor “comma separated values” (komma gescheiden waarden). Het is een platte tekst bestand (dus geen opmaak, zoals word of google documenten) dat een data in een vaste structuur bevat.
 Het is eigenlijk gewoon een spreadsheet waarin de namen van de kolommen op de eerste regel van het bestand staan. Iedere volgende "rij" staat op een volgende regel met aparte cellen die door komma's worden gescheiden. Het CSV formaat wordt door heel veel programmeertalen begrepen, maar ook Excel of Google Spreadsheets weten raad met dit formaat. Veel organisaties en bedrijven gebruiken het CSV formaat om data te delen met anderen. Dus er zijn veel bronnen te vinden online waar je CSV kan downloaden.</p>
 
 <p>Eigenlijk is een CSV-bestand een soort van array van rijen, en iedere rij is een object waarvan de key de kolomnaam is en de waarden in de cellen in die kolom staan. </p>
@@ -567,8 +568,8 @@ function draw() {
   for (var i = 0; i < 9; i++){
     line(0,300+i*-20,400,300+i*-20);
   }
-  
-  
+
+
   //rode verticale lijn is thuiswedstrijd, wit is uit
   for (var j = 0; j < ajaxdata.getRowCount(); j++) {
     if(ajaxdata.getString(j,"uitthuis") == "U") {
@@ -576,7 +577,7 @@ function draw() {
     } else {
       stroke(255,0,0,100);
     }
-    
+
     line(34+j*10,0,34+j*10,400);
     noStroke();
     //rode cirkels doelpunten ajax, witte doelpunten tegenstander
@@ -584,7 +585,7 @@ function draw() {
     ellipse(34+j*10, 300 + ajaxdata.getNum(j, "goalsAjax")*-20, 10, 10);
     fill(255,150);
     ellipse(34+j*10, 300 + ajaxdata.getNum(j, "goalsOpp")*-20, 10, 10);
-    
+
   }
 }
 </script>

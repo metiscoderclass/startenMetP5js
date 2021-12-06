@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    
+
       Media (Creative Coding)
-    
+
   </title>
 
 <!-- CSS -->
@@ -48,6 +48,7 @@
   <li><a href="https://editor.p5js.org/" target="_blank">p5 webeditor</a></li>
   <li><a href="https://p5js.org/reference/" target="_blank">Referentie</a></li>
 <li><a href="https://www.youtube.com/user/shiffman/playlists?sort=dd&shelf_id=14&view=50" target="_blank">The Coding Train</a></li>
+  <li><a href="http://www.generative-gestaltung.de/2/" target="_blank">Generative Design voorbeeldsketches</a></li>
 </ul>
     <div class="container content">
       <main>
@@ -66,8 +67,8 @@ Search</a> is een goede plek om afbeeldingen te vinden die je mag gebruiken.)</p
 
 <p>Onthoudt de <em>naam</em> van de file: je hebt hem straks nodig om hem in je sketch te laden </p>
 
-<p>In het volgende voorbeeld, gebruik ik een afbeelding met de naam <code>kitty.jpg</code>, die je 
-<a href="/sketches/kitty.jpg">hier kan downloaden</a>. (<a href="https://www.flickr.com/photos/makoto-suzuki/8750156403">Bron</a>, gebruikt onder de 
+<p>In het volgende voorbeeld, gebruik ik een afbeelding met de naam <code>kitty.jpg</code>, die je
+<a href="/sketches/kitty.jpg">hier kan downloaden</a>. (<a href="https://www.flickr.com/photos/makoto-suzuki/8750156403">Bron</a>, gebruikt onder de
 <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a> licentie.)</p>
 
 https://editor.p5js.org/visualeditorNL/sketches/_OMoDUoOC
@@ -75,7 +76,7 @@ https://editor.p5js.org/visualeditorNL/sketches/_OMoDUoOC
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
 function preload() {
-  kitty = loadImage("https://raw.githubusercontent.com/visualeditorNL/data/master/pacman");
+  kitty = loadImage("images/kitty.jpg");
 }
 function setup() {
   createCanvas(400, 400);
@@ -93,11 +94,11 @@ function draw() {
   De eerste is de <code>preload()</code> functie. Dit is een functie die je, net zoals
    <code>setup()</code> and <code>draw()</code>, definieert in je sketch en die automatisch wordt aangeroepen door p5.js.
    De code in <code>preload()</code> wordt uitgevoerd
-<em>vóór</em> <code>setup()</code> en <code>draw()</code> aangeroepen worden, 
-en meestal is het om plaatjes (of andere media) die je in je sketch gaat gebruiken alvast te laden, 
+<em>vóór</em> <code>setup()</code> en <code>draw()</code> aangeroepen worden,
+en meestal is het om plaatjes (of andere media) die je in je sketch gaat gebruiken alvast te laden,
 zodat je zeker weet dat deze bestanden beschikbaar zijn als de rest van de sketch uitgevoerd wordt.</p>
 
-<p>De <code>loadImage()</code> functie. Deze functie haalt de data uit het bestand van het plaatje en maakt die beschikbaar voor gebruik binnen de sketch. 
+<p>De <code>loadImage()</code> functie. Deze functie haalt de data uit het bestand van het plaatje en maakt die beschikbaar voor gebruik binnen de sketch.
 De functie zelf tekent niets op het scherm: de functie <em>returns</em> de image data in een Javascript <em>object</em>. Deze code:</p>
 
 <pre><code>kitty = loadImage("kitty.jpg");
@@ -106,7 +107,7 @@ De functie zelf tekent niets op het scherm: de functie <em>returns</em> de image
 <p>… <em>assigns (wijst toe)</em> de waarde van het object aan de variable <code>kitty</code>. (Er is niets speciaals aan de variable naam <code>kitty</code> hier komt het overeen met de bestandsnaam,
 van het plaatje, maar je zou de variabele, als je dat handig vindt, ook een heel andere naam kunnen geven.)</p>
 
-<p>Om onze code netjes en overzichtelijk te houden en om er zeker van te zijn dat de <code>kitty</code> variabele beschikbaar 
+<p>Om onze code netjes en overzichtelijk te houden en om er zeker van te zijn dat de <code>kitty</code> variabele beschikbaar
 is voor de <code>draw()</code> functie, heb ik de <code>kitty</code> variabele aangemaakt (*declared*)<em>voor</em>
 <code>preload()</code> en <code>setup()</code>. Het aanmaken van een variabele is een beetje vreemd, omdat
 ik er bij het aanmaken geen waarde aan <em>toeken (assign)</em>.
@@ -114,14 +115,14 @@ Het komt erop neer dat we Javascript vertellen: “Hey, ik ga straks gebruik mak
 <code>kitty</code>, het is maar dat je het weet.” (Hieronder meer uitleg.)</p>
 
 <p>Tenslotte, om het plaatje op het scherm te tekenen, roep ik de <code>image()</code>
-functie aan binnen de <code>draw()</code> functie. De <code>image()</code> functie heeft *tenminste* drie 
-parameters: de eerste is het image object dat je wilt tekenen, en de tweede en derde geven de 
+functie aan binnen de <code>draw()</code> functie. De <code>image()</code> functie heeft *tenminste* drie
+parameters: de eerste is het image object dat je wilt tekenen, en de tweede en derde geven de
 X en Y coördinaten van waar het plaatje getekend moet worden.</p>
 
 <p>De <code>image()</code> functie kan echter meer. Je kunt een
-vierde en vijfde parameter opgeven om gewenste breedte en hoogte (in pixels) te specificeren. 
+vierde en vijfde parameter opgeven om gewenste breedte en hoogte (in pixels) te specificeren.
 Bovendien is er een <code>imageMode()</code> functie,
-vergelijkbaar met de <code>rectMode()</code> functie, die je laten kiezen of je de opgegeven X en Y coördinaten wilt gebruiken als *midden* van het plaatje of als *linker bovenhoek*. 
+vergelijkbaar met de <code>rectMode()</code> functie, die je laten kiezen of je de opgegeven X en Y coördinaten wilt gebruiken als *midden* van het plaatje of als *linker bovenhoek*.
 Hier is een sketch die beide varianten laat zien.
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
@@ -148,7 +149,7 @@ function draw() {
 <pre><code>var kitty = loadImage("kitty.jpg"); // werkt niet!! waarom??
 </code></pre>
 
-<p>Oftewel: waarom niet meteen de <code>loadImage()</code> functie aanroepen bij het declareren (aanmaken) van de variabele? 
+<p>Oftewel: waarom niet meteen de <code>loadImage()</code> functie aanroepen bij het declareren (aanmaken) van de variabele?
 Helder en duidelijk, maar helaas werkt het niet omdat sommige functies (waaronder de meeste <code>load...()</code> functies die ik behandel
 in deze cursus) <em>uitsluitend binnen de <code>preload()</code> functie kunnen worden aangeroepen</em>. Dit komt door de manier waarop p5.js is gebouwd, niet iets om nu diep op in te gaan, maar wel goed om te weten.
 </p>
@@ -170,25 +171,25 @@ function draw() {
   image(kitty, mouseX, mouseY);
 }
 </script>
-<p>Afhankelijk van je computer, kunnen er verschillende dingen gebeuren als je deze sketch uitvoert. 
-Bij mij lijkt het alsof er <em>niets</em> gebeurt. Dat komt doordat p5.js de <code>draw()</code> functie 
-tientallen keren per seconde uitvoert, waarmee één enkele run van <code>draw()</code> niet veel langer duurt dan een honderdste van een seconde. 
-Een plaatje laden, zelfs een klen plaatje, duurt veel langer, bijvoorbeeld een halve seconde. 
+<p>Afhankelijk van je computer, kunnen er verschillende dingen gebeuren als je deze sketch uitvoert.
+Bij mij lijkt het alsof er <em>niets</em> gebeurt. Dat komt doordat p5.js de <code>draw()</code> functie
+tientallen keren per seconde uitvoert, waarmee één enkele run van <code>draw()</code> niet veel langer duurt dan een honderdste van een seconde.
+Een plaatje laden, zelfs een klen plaatje, duurt veel langer, bijvoorbeeld een halve seconde.
 Dus wat er in deze sketch gebeurt is dat we p5.js vragen een plaatje te laden maar, lang voordat dat gelukt is
 we vragen om het plaatje <em>opnieuw</em> te laden. Waardoor het plaatje nooit getoond kan worden.</p>
 
 <p>Wat je moet onthouden bij het aanroepen van <code>loadImage()</code> op andere plekken
 dan binnen <code>preload()</code>, is dat p5.js je sketch zal uitvoeren<em>voordat</em> het
-plaatje geladen is. Dit betekent dat bepaalde attributen van het plaatje (zoals de 
-breedte, hoogte of pixelgegevens) mogelijk niet beschikbaar zijn tot de <code>draw()</code> functie een flink aantal keer uitgevoerd is. 
+plaatje geladen is. Dit betekent dat bepaalde attributen van het plaatje (zoals de
+breedte, hoogte of pixelgegevens) mogelijk niet beschikbaar zijn tot de <code>draw()</code> functie een flink aantal keer uitgevoerd is.
 Daarom is het een goede gewoonte om gebruik te maken van <code>preload()</code>.</p>
 
 <h3 id="multiple-images">Meerdere plaatjes</h3>
 
-<p>Je bent niet beperkt tot het werken met één beeld. Je kunt zoveel variabelen om beelden in op te slaan aanmaken als je wil. 
-Je moet alleen niet vergeten ze te laden in de <code>preload()</code> (of <code>setup()</code>). 
-Het volgende voorbeeld laat een cat in een hond veranderen als de muis wordt ingedrukt. 
-(Ik gebruik <a href="/sketches/doggy.jpg">dit plaatje</a>, oorspronkelijk van 
+<p>Je bent niet beperkt tot het werken met één beeld. Je kunt zoveel variabelen om beelden in op te slaan aanmaken als je wil.
+Je moet alleen niet vergeten ze te laden in de <code>preload()</code> (of <code>setup()</code>).
+Het volgende voorbeeld laat een cat in een hond veranderen als de muis wordt ingedrukt.
+(Ik gebruik <a href="/sketches/doggy.jpg">dit plaatje</a>, oorspronkelijk van
 <a href="https://flic.kr/p/s1iufR">hier</a>, opnieuw met een <a href="https://creativecommons.org/licenses/by/2.0/">CC BY
 2.0</a> licentie.)</p>
 
@@ -220,7 +221,7 @@ function draw() {
 <h3 id="alpha-channels">Alpha kanaal</h3>
 
 <p>De plaatjes die we tot nog toe gebruikten waren in JPEG formaat. Afbeeldingen in JPEG
-formaat are gecomprimeerd en hebben in het algemeen een goede kwaliteit bij kleine bestandsgrootte. 
+formaat are gecomprimeerd en hebben in het algemeen een goede kwaliteit bij kleine bestandsgrootte.
 Een beperking van JPEG is dat het geen <em>doorzichtigheid (transparency)</em> toestaat.
 Je kunt dit eenvoudig zichtbaar maken door een plaatje tweemaal te tekenen:</p>
 
@@ -245,12 +246,12 @@ function draw() {
 Dat zou best handig kunnen zijn in sommige gevallen maar is hier niet wat je verwacht (of wil).
 </p>
 
-<p>Om te begrijpen hoe je plaatjes met een transparante achtergrond tekent, moet ik het idee van 
-<em>alpha channel (alpha kanaal)</em> uitleggen. 
+<p>Om te begrijpen hoe je plaatjes met een transparante achtergrond tekent, moet ik het idee van
+<em>alpha channel (alpha kanaal)</em> uitleggen.
 Het alpha channel is een vierde stukje informatie dat is opgeslagen in een pixel, naast de RGB-waarden
-(rood, groen, blauw), dat bepaalt hoe doorzichtig een pixel er op het scherm moet uitzien. 
+(rood, groen, blauw), dat bepaalt hoe doorzichtig een pixel er op het scherm moet uitzien.
 Een alpha waarde van 255 is volledig ondoorzichtig, en een alpha waarde van 0
-is volledig doorzichtig. 
+is volledig doorzichtig.
 The functies die we tot nog toe gebruikt hebben om kleur in te stellen ondersteunen allemaal een vierde parameter om de doorzichtigheid in te stellen.
 Hier is een voorbeeld:</p>
 
@@ -478,7 +479,7 @@ folder, and then load the sound file data inside the sketch.</p>
 <a href="https://en.wikipedia.org/wiki/MP3">MP3</a> format. But you should be aware that
 <em>not every web browser supports MP3</em>. In particular, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats">MP3 support in Firefox is
 operating-system
-dependent</a>. 
+dependent</a>.
 <a href="http://p5js.org/examples/examples/Sound_soundFormats.php">This example sketch</a>
 in the p5.js reference shows how you can provide your audio files in different
 formats for maximum cross-platform compatibility.</p>
@@ -701,7 +702,7 @@ function keyTyped() {
 </script>
 <h2 id="uploading-sketches-that-use-media">Uploading sketches that use media</h2>
 
-<p>When you’re uploading your sketches to the Internet, make sure to upload your 
+<p>When you’re uploading your sketches to the Internet, make sure to upload your
 media files as well! They need to be in the same folder as your <code>index.html</code>
 file. If something doesn’t work, check the Javascript Console in your browser
 (in Chrome, <code>View &gt; Developer &gt; Javascript Console</code>) for error messages.</p>

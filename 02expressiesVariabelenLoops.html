@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    
+
       Expressies, variabelen en lussen
-    
+
   </title>
 
   <!-- CSS -->
@@ -49,6 +49,7 @@
   <li><a href="https://editor.p5js.org/" target="_blank">p5 webeditor</a></li>
   <li><a href="https://p5js.org/reference/" target="_blank">Referentie</a></li>
 <li><a href="https://www.youtube.com/user/shiffman/playlists?sort=dd&shelf_id=14&view=50" target="_blank">The Coding Train</a></li>
+  <li><a href="http://www.generative-gestaltung.de/2/" target="_blank">Generative Design voorbeeldsketches</a></li>
 </ul>
     <div class="container content">
       <main>
@@ -64,7 +65,7 @@
 (zoals <code>ellipse</code>) te gebruiken met parameters. De parameters waren vaste getallen, zoals <code>100</code>
 of <code>300</code> bijvoorbeeld. Getallen als <code>300</code> of <code>150</code> heten in Javascript een <em>waarde</em>.  (Later zal je ook nog leren dat waarden niet alleen getallen hoeven te zijn, maar laten we nu alleen even met getallen werken). In alle sketches uit het vorige hoofdstuk werd met in iedere functie een op zichzelf staand getal gebruikt voor de parameters. </p>
 
-<p>Deze individuele op zichzelf staande getallen zijn prima, maar ze zijn maar het begin van het programmeerverhaal. Je kan ieder individueel getal met behulp van <em>expressies</em> combineren met andere getallen. Dit klinkt moeilijker dan het is. Je doet het al met wiskunde. Een expressie is een manier om een nieuw getal te maken door waarden te combineren met <em>operatoren</em>! 
+<p>Deze individuele op zichzelf staande getallen zijn prima, maar ze zijn maar het begin van het programmeerverhaal. Je kan ieder individueel getal met behulp van <em>expressies</em> combineren met andere getallen. Dit klinkt moeilijker dan het is. Je doet het al met wiskunde. Een expressie is een manier om een nieuw getal te maken door waarden te combineren met <em>operatoren</em>!
 
 <p>Hier gaan we zo verder op in. Eerst eens naar een voorbeeld kijken. Hier staat een simpele sketch die vier cirkels tekent: </p>
 
@@ -86,7 +87,7 @@ function draw() {
 }
 </script>
 
-<p>Afgezien van de <code>noLoop()</code>, moet na het vorige hoofdstuk deze code nu kunnen begrijpen (op de <code>noLoop()</code> gaan we later nog in). Alle getallen uit de code kunnen vervangen worden door <em>expressies</em>. Een expressie bestaat uit een <em>operator</em> met twee waardes, een waarde links en rechts van de operator. Eigenlijk dus gewoon een som die je uit de wiskunde kent. 
+<p>Afgezien van de <code>noLoop()</code>, moet na het vorige hoofdstuk deze code nu kunnen begrijpen (op de <code>noLoop()</code> gaan we later nog in). Alle getallen uit de code kunnen vervangen worden door <em>expressies</em>. Een expressie bestaat uit een <em>operator</em> met twee waardes, een waarde links en rechts van de operator. Eigenlijk dus gewoon een som die je uit de wiskunde kent.
 Hier is bijvoorbeeld dezelfde sketch, maar nu met de <em>optel</em>operator (<code>+</code>) om de y-positie van alle ellipsen met 50 pixels te veranderen: </p>
 
 <script type="text/p5" data-preview-width="400" data-height="400">
@@ -173,15 +174,15 @@ function draw() {
 <ul>
   <li>Hier wordt de <code>ellipse</code> functie aangeroepen.</li>
   <li>In functies worden parameters gescheiden door komma's. Er zijn drie komma's tussen de haakjes dus zijn er vier parameters (Komma's staan alleen <em>tussen</em> de parameters, dus er is een komma minder dan er parameters zijn). </li>
-  <li>De parameters van de functie zijn dan <code>100</code>, <code>300 + 50</code>, <code>150 / 3</code>en 
+  <li>De parameters van de functie zijn dan <code>100</code>, <code>300 + 50</code>, <code>150 / 3</code>en
 <code>150</code>.</li>
   <li><code>100</code> en <code>150</code> zijn gewoon vaste getallen, maar <code>300 + 50</code> en <code>150 / 3</code> zijn expressies. Javascript zal deze expressies in een vast getal omzetten als de sketch aangezet wordt (het resultaat is dus <code>350</code> voor de een en <code>50</code> voor de ander).</li>
   <li>De volgorde van de parameters is van belang zoals we in het vorige hoofdstuk al zagen, als je niet meer weet wat welk getal bepaalt kijk dan weer even naar de <a href="https://p5js.org/reference/#/p5/ellipse">referentiepagina van de ellipse functie</a>. Zoals je ziet of misschien nog weet geeft de eerste parameter de X-positie, de tweede de Y-positie, de derde de breedte en de vierde parameter de hoogte van de ellipse.</li>
   <li>Dus deze regel zorgt ervoor dat er een ellipse wordt getekend op de X-positie 100, de Y-positie 350 met een diameter in de breedte van 50 en in de hoogte van 150 (Precies wat je ziet in de sketch!). </li>
 </ul>
 
-<p>Als de computer een expressie omzet in een getal heet dat 
-<em>evaluatie</em>. Als je een expressie in je programma zet dan 
+<p>Als de computer een expressie omzet in een getal heet dat
+<em>evaluatie</em>. Als je een expressie in je programma zet dan
 <em>evalueert</em> Javascript deze om het in een waarde om te zetten.</p>
 
 <p>De spaties voor en na de operator zijn overigens niet nodig voor de computer maar maakt de code voor een mens wat leesbaarder soms. </p>
@@ -217,7 +218,7 @@ web editor</a> en kopieer en plak de onderstaande code eens tussen de <code>{</c
 
 <h3 id="more-complex-expressions-and-order-of-operation">Ingewikkeldere expressies en de volgorde van bewerkingen</h3>
 
-<p>Dit zal je waarschijnlijk al bij wiskunde gehad hebben, maar een operator kan een waarde aan beide kanten hebben, maar ook een andere 
+<p>Dit zal je waarschijnlijk al bij wiskunde gehad hebben, maar een operator kan een waarde aan beide kanten hebben, maar ook een andere
 <em>expressie</em>. Je kan er zoveel aan elkaar plakken als je zelf wilt. </p>
 
 <p>Om een expressie deel uit te laten maken van een andere expressie zet je deze tussen haakjes Bijvoorbeeld:</p>
@@ -244,7 +245,7 @@ Javascript rekent dit precies hetzelfde uit als je zelf waarschijnlijk doet. Van
 </ul>
 
 <blockquote>
-  <p>Oefening: Wat is het antwoord van de expressie <code>((1 + 2) * (3 + 4)) / (9 - 2)</code>? Probeer het eerst uit je hoofd en check daarna je antwoord met de 
+  <p>Oefening: Wat is het antwoord van de expressie <code>((1 + 2) * (3 + 4)) / (9 - 2)</code>? Probeer het eerst uit je hoofd en check daarna je antwoord met de
 <code>console.log()</code>. </p>
 </blockquote>
 
@@ -690,7 +691,7 @@ function draw() {
 
 <h3 id="the-for-loop">De <code>for</code> lus</h3>
 
-<p>En die is er uiteraard! Anders was ik er niet over begonnen (en zoals je je misschien kan herinneren van de vorige periode). Dit principe van herhalen heet in programmeertaal een <em>loop</em> (in het Nederlands een lus, maar ik zal het vanaf nu de Engelse benaming, loop, aanhouden). Het heet een lus of loop omdat het de computer na een lijst van instructies de weer opnieuw dezelfde instructies laat uitvoeren en waarschijnlijk nog wel een paar keer. 
+<p>En die is er uiteraard! Anders was ik er niet over begonnen (en zoals je je misschien kan herinneren van de vorige periode). Dit principe van herhalen heet in programmeertaal een <em>loop</em> (in het Nederlands een lus, maar ik zal het vanaf nu de Engelse benaming, loop, aanhouden). Het heet een lus of loop omdat het de computer na een lijst van instructies de weer opnieuw dezelfde instructies laat uitvoeren en waarschijnlijk nog wel een paar keer.
 
 
 Er zijn verschillende manieren waarop je een loop kan maken in Javascript. Degene die we als eerste gaan leren is de <code>for</code> loop. De <code>for</code> loop heeft een heel flexibele structuur die daardoor op meerdere manieren is te gebruiken, maar we beginnen met een vorm en die ziet er zo uit: </p>
@@ -902,7 +903,7 @@ function draw() {
 }
 </script>
 
-<p>Maar wacht. Doen we nu nou weer precies hetzelfde. Het herhalen van code met maar een kleine variatie net zoals iets eerder in dit hoofdstuk? En dan optellen van nul tot een ander getal? 
+<p>Maar wacht. Doen we nu nou weer precies hetzelfde. Het herhalen van code met maar een kleine variatie net zoals iets eerder in dit hoofdstuk? En dan optellen van nul tot een ander getal?
 En was dit precies het probleem waar de <code>for</code> loop voor was bedacht om dit op te lossen?
 En inderdaad. Je kan een <code>for</code> loop <em>in</em> een andere
 <code>for</code> loop. Wanneer je een tweede <code>for</code>
@@ -965,7 +966,7 @@ function draw() {
 </script>
 
 <p>Comments worden ook vaak gebruikt om regels code in je programma "tijdelijk" uit te schakelen.
-Als je de sketch hierboven uit laat voeren en graag even wilt zien hoe deze eruit ziet zonder de middelste cirkel, zonder de hele regel weg te gooien, kan je heel simpel even 
+Als je de sketch hierboven uit laat voeren en graag even wilt zien hoe deze eruit ziet zonder de middelste cirkel, zonder de hele regel weg te gooien, kan je heel simpel even
 <code>//</code> aan het begin van de regel zetten. (Dit heet onder programmeurs “commenting it out”).</p>
 
 <script type="text/p5" data-preview-width="400" data-height="400">
@@ -991,7 +992,7 @@ function draw() {
 
 <p>Comments zijn ook heel fijn als je met anderen samenwerkt aan een programmeerproject. Je kan andere wijzen op lastige stukken code of onduidelijkheden verduidelijken of nog even aangeven wat er nog moet gebeuren.</p>
 
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Comments">Je kan hier meer lezen over het gebruik van 
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Comments">Je kan hier meer lezen over het gebruik van
 comments in Javascript</a>, inclusief de syntax voor het maken van comments die meerdere regels bevatten.
 </p>
 
