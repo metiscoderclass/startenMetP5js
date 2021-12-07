@@ -366,8 +366,9 @@ function draw() {
 </code></pre>
 
 <blockquote>
-  <p>NOTE: A <em>method</em> is a special kind of function that is associated with a type
-of value. The image objects that <code>loadImage()</code> returns, for example, have
+  <p>Let op: Een <em>methode</em> is een speciale functie die samenhangt met een waarde.
+
+    The image objects that <code>loadImage()</code> returns, for example, have
 their own “library” of code snippets, called “methods,” that go along with
 each individual object. These code snippets are just like functions, except
 they specifically reference the data contained inside of the objet they’re
@@ -485,28 +486,9 @@ inside of <code>draw()</code> in order to trigger the sound. Here’s an example
 <a href="/media/meow.mp3">this audio file</a>
 (<a href="https://freesound.org/people/Yoyodaman234/sounds/156643/">source</a>).</p>
 
-<iframe src="https://editor.p5js.org/visualeditorNL/full/BFOXJN5Xj" width="100%" height="400px"></iframe>
+<iframe src="https://editor.p5js.org/visualeditorNL/full/BFOXJN5Xj" width="100%" height="500px"></iframe>
 
 
-<script type="text/p5" data-preview-width="400" data-height="400">
-var kitty;
-var meow;
-function preload() {
-  kitty = loadImage("media/kitty.jpg");
-  meow = loadSound("media/meow.mp3");
-}
-function setup() {
-  createCanvas(400, 400);
-}
-function draw() {
-  background(255);
-  imageMode(CENTER);
-  image(kitty, width/2, height/2);
-  if (frameCount == 30) {
-    meow.play();
-  }
-}
-</script>
 <h3 id="cats-should-not-be-robots">Cats should not be robots</h3>
 
 <p>The example above called the <code>.play()</code> function when the <code>frameCount</code> variable
@@ -514,26 +496,8 @@ reached 30, so that the audio snippet plays shortly after the sketch starts
 running. What if we wanted to trigger the file to play whenever the mouse is
 pressed? You might think you could do it like this:</p>
 
-<script type="text/p5" data-preview-width="400" data-height="400">
-var kitty;
-var meow;
-function preload() {
-  kitty = loadImage("media/kitty.jpg");
-  meow = loadSound("media/meow.mp3");
-}
-function setup() {
-  createCanvas(400, 400);
-}
-function draw() {
-  background(255);
-  imageMode(CENTER);
-  image(kitty, width/2, height/2);
-  if (mouseIsPressed) {
-    console.log("play!");
-    meow.play();
-  }
-}
-</script>
+<iframe src="https://editor.p5js.org/visualeditorNL/full/Q5l6qkXMk" width="100%" height="500px"></iframe>
+
 <p>But that does something weird. The kitty sounds robotic or something. What
 gives? I put the <code>console.log()</code> function in there in order to give you a clue:
 you can see that it prints <em>multiple</em> times whenever the mouse is pressed.
@@ -549,31 +513,8 @@ but only when the mouse is <em>first</em> pressed and not subsequently during th
 press. One way to do this would be with the sound object’s <code>.isPlaying()</code>
 method, which returns true if the sound is playing, and false if not:</p>
 
-<script type="text/p5" data-preview-width="400" data-height="400">
-var kitty;
-var meow;
-function preload() {
-  kitty = loadImage("media/kitty.jpg");
-  meow = loadSound("media/meow.mp3");
-}
-function setup() {
-  createCanvas(400, 400);
-}
-function draw() {
-  background(255);
-  imageMode(CENTER);
-  image(kitty, width/2, height/2);
-  if (mouseIsPressed) {
-    // only trigger the sound if the mouse
-    // is pressed and the sound isn't
-    // already playing
-    if (meow.isPlaying() == false) {
-      console.log("play!");
-      meow.play();
-    }
-  }
-}
-</script>
+<iframe src="https://editor.p5js.org/visualeditorNL/full/L31DI_vNN" width="100%" height="500px"></iframe>
+
 <p>Hey! It works!</p>
 
 <h3 id="event-functions">Event functions</h3>
@@ -589,50 +530,15 @@ purposes is that it only gets called <em>once</em> per mouse press!</p>
 
 <p>Here’s the example above, reworked to use <code>mousePressed()</code>:</p>
 
-<script type="text/p5" data-preview-width="400" data-height="400">
-var kitty;
-var meow;
-function preload() {
-  kitty = loadImage("media/kitty.jpg");
-  meow = loadSound("media/meow.mp3");
-}
-function setup() {
-  createCanvas(400, 400);
-}
-function draw() {
-  background(255);
-  imageMode(CENTER);
-  image(kitty, width/2, height/2);
-}
-function mousePressed() {
-  meow.play();
-}
-</script>
+<iframe src="https://editor.p5js.org/visualeditorNL/full/tGWC1IPCA" width="100%" height="500px"></iframe>
+
 <p>Another event function that may be useful is <code>keyTyped()</code>. This function gets
 called whenever a key is pressed. Here’s the same sketch as above, but the
 sound is triggered by a keypress instead of a mouse click. (You may need to
 click inside of the sketch to give it focus for your keypresses to have any
 effect.)</p>
+<iframe src="https://editor.p5js.org/visualeditorNL/full/DaLvm009t" width="100%" height="500px"></iframe>
 
-<script type="text/p5" data-preview-width="400" data-height="400">
-var kitty;
-var meow;
-function preload() {
-  kitty = loadImage("media/kitty.jpg");
-  meow = loadSound("media/meow.mp3");
-}
-function setup() {
-  createCanvas(400, 400);
-}
-function draw() {
-  background(255);
-  imageMode(CENTER);
-  image(kitty, width/2, height/2);
-}
-function keyTyped() {
-  meow.play();
-}
-</script>
 <h3 id="a-simple-drum-kit">A simple drum kit</h3>
 
 <p>Inside of the <code>keyTyped()</code> function, a special variable named <code>key</code> contains
