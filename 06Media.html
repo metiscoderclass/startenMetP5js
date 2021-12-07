@@ -298,17 +298,10 @@ function draw() {
 </script>
 <p> Dit is leuk, maar het poezenplaatje dan? Helaas is het niet zo makkelijk om de
   achtergrond van een plaatje te verwijderen en er een transparante achtergrond van te maken.
-Je moet met een speciaal programma de achtergrond met de hand verwijderen. Daar zijn tutorials
-over te vinden:  <a href="http://docs.gimp.org/en/gimp-tutorial-quickie-separate.html">there are many
-tutorials</a> about
-<a href="http://www.digitalartsonline.co.uk/tutorials/photoshop/how-to-remove-a-background-in-photoshop/">the
-process</a>
-on the web. I’ve taken the liberty of (poorly) removing the background from our
-kitty image so that this section of the tutorial has a proper denouement. <a href="/sketches/kitty_transparent.png">Here
-is the resulting image</a>.</p>
+Je moet met een speciaal programma de achtergrond met de hand verwijderen. Bijvoorbeeld Photoshop (betaald) of Gimp (gratis).
+Een tutorial over Gimp vind je <a href="http://docs.gimp.org/en/gimp-tutorial-quickie-separate.html">hier</a>.
 
-<p>Here’s the same sketch as above, but with the transparent kitty PNG (and a
-solid color background!)</p>
+<p>Hier staat dezelfde sketch als hierboven, maar dan met een kat met transparante achtergrond op een kleur.</p>
 
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
@@ -327,27 +320,25 @@ function draw() {
     200+sin(frameCount*0.06)*100);
 }
 </script>
-<h2 id="working-with-image-data">Working with image data</h2>
+<h2 id="working-with-image-data">Het werken met beelddata</h2>
 
-<p>You can do more with an image object than just display it to the screen. Image
-objects come with a few bits of associated data, and some associated functions,
-that allow you to read and manipulate the data inside the image in interesting
-ways.</p>
+<p>Je kan meer met een plaatje dan alleen laten zien op een scherm. Een afbeeldingsobject
+  komt in P5js met wat data in het plaatje en wat functies die daar bij horen. Hiermee
+  kan je de data lezen en manipuleren en dat kan tot leuke dingen leiden.</p>
 
-<p>You can get an image’s width and height by accessing its <code>width</code> and <code>height</code>
-attributes. An object’s <em>attributes</em> are special values belonging to that
-object that are accessed by putting a dot (<code>.</code>) after the object’s variable
-name, and the name of the attribute after the dot. Assuming you’d already used
-<code>loadImage()</code> to load an image object into a variable called <code>img</code>, you would
-access that image’s <code>width</code> and <code>height</code> like so:</p>
+  <p>Je krijgt de breedte en hoogte van een afbeelding door de <code>width</code> en <code>height</code>
+  attributen. Een <em>attribuut</em> van een object zijn speciale waarden die bij dat object horen
+  en kunnen verkregen worden door een punt (<code>.</code>) na de variabelenaam van het object,
+  en de naam van het atribuut na de punt. Als je de <code>loadImage()</code> al hebt gebruikt
+  om een afbeeldingsobject in te laden onder bijvoorbeeld de naam <code>img</code>, dan kan je de
+  breedte en hoogte van een afbeelding krijgen door onderstaande code:</p>
 
 <pre><code>img.width
 img.height
 </code></pre>
 
-<p>In the following sketch, I’m drawing ten copies of of the same
-kitty image, increasing their size proportionally by writing expressions with
-the image’s width and height:</p>
+<p>In de volgende sketch worden 10 katten getekend waarin de grootte in een loop woorden
+  aangepast door expressies te schrijven met de breedte en hoogte van de afbeelding: </p>
 
 <script type="text/p5" data-preview-width="400" data-height="400">
 var kitty;
@@ -366,9 +357,10 @@ function draw() {
   }
 }
 </script>
-<p>Every image object also supports a method called <code>.get()</code>, which takes two
-parameters, an X and a Y coordinate, and returns the <em>color</em> at that
-coordinate. Call this method like so:</p>
+
+<p>Ieder Image object heeft ook een methode <code>.get()</code>, deze heeft twee parameters
+  nodig which takes two, een X en een Y coordinaat, en geeft de <em>kleur</em> terug van dit coordinaat.
+ Je roept deze methode zo op: </p>
 
 <pre><code>img.get(x, y)
 </code></pre>
@@ -493,7 +485,7 @@ inside of <code>draw()</code> in order to trigger the sound. Here’s an example
 <a href="/media/meow.mp3">this audio file</a>
 (<a href="https://freesound.org/people/Yoyodaman234/sounds/156643/">source</a>).</p>
 
-<iframe src="https://editor.p5js.org/visualeditorNL/full/BFOXJN5Xj"></iframe>
+<iframe src="https://editor.p5js.org/visualeditorNL/full/BFOXJN5Xj" width="100%" height="400px"></iframe>
 
 
 <script type="text/p5" data-preview-width="400" data-height="400">
